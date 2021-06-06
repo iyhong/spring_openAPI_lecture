@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+function test(data){
+	console.log('### jsonp 방식 확인')
+	console.log(data)
+}
+</script>
+<script type="text/javascript" 
+	src ="http://contactsvc.bmaster.kro.kr/contacts?pageno=1&pagesize=3&callback=test"
+></script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;execute&apos; from expression &apos;httpClient.execute(httpGet)&apos;&#x0A;- Original project: &apos;httpclienttest&apos;&#x0A;- Variable name: &apos;execute&apos;&#x0A;- Destination method: &apos;httpclienttest.Sample1.main()&apos;&#x0A;- Variable expression: &apos;httpClient.execute(httpGet)&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;execute&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;httpclienttest{Sample1.java" name="execute" replace="true" selection="598 0" stamp="1622595955219" varType="false" version="1.0"/>
+</session>

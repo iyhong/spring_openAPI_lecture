@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#a").css("color","blue")
+	/* $("div#a").css("color", "blue") */
+	$("h2").css("background-color", "yellow")
+	$(".test").css("border", "solid 1px gray")
+})
+</script>
+</head>
+<body>
+	<div id="root">
+		<div id="a">Hello 1</div>
+		<div class="test">Hello 2</div>
+		<div class="test  main">Hello 3</div>
+		<h2>Hello 4</h2>
+		<h2 id="a">Hello 5</h2>
+		<div id="a">Hello 5-1</div>
+	</div>
+	<div id="other">
+		<div class="test">Hello 6</div>
+	</div>
+</body>
+</html>

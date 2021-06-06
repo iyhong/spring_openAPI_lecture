@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org">
+​
+<head>
+<meta charset="utf-8">
+<title>목록 화면</title>
+<style>
+	table.mytable { width:500px; }
+	table.mytable > thead { 	background-color: aqua; }
+	table.mytable > tbody  td { border-bottom: solid 1px gray; padding:3px 10px 3px 10px; }
+	div.myinput { padding-bottom: 3px; }
+	div.box { padding: 20px; }
+</style>
+</head>
+​
+<body>
+	<div>
+		<div  style="margin:10px 10px 10px 10px; ">
+			<table class="mytable">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>성명</th>
+						<th>전화</th>
+						<th>주소</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="c : ${data.contacts}">
+						<td th:text="${c.no}" />
+						<td th:text="${c.name}" />
+						<td th:text="${c.tel}" />
+						<td th:text="${c.address}" />
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

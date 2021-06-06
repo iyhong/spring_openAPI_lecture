@@ -1,0 +1,5 @@
+package com.multi.oauth20server;
+
+public class OAuth2SecurityConfig {
+
+}

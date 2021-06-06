@@ -1,0 +1,5 @@
+package com.multi.contactsapp.dao;
+
+public class ContactDAO {
+
+}

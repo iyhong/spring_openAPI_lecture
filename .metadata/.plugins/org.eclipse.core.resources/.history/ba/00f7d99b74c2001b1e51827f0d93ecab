@@ -1,0 +1,5 @@
+package com.multi.contactsapp.domain;
+
+public class ContactList {
+
+}

@@ -1,0 +1,10 @@
+package com.multi.contactsapp.domain;
+
+@JacksonXmlRootElement(localName = "result")
+public class Result {
+	private String status;
+	private String message;
+	private String key;
+	
+	//getter, setter, constructor 생략
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#test tr:first").css("background-color", "purple").css("color","yellow");
+	$("#test tr:gt(0)>td").css("border-bottom", "solid 1px gray");
+	$("#test tr:gt(0)").on('click', function(){
+		alert(this.innerHTML)	
+	})
+})
+</script>
+</head>
+<body>
+	<table id="test">
+		<tr>
+			<th>No</th><th>Name</th><th>Tel</th><th>Address</th>
+		</tr>
+		<tr>
+			<td>1001</td><td>이몽룡1</td><td>010-1111-2221</td><td>서울</td>
+		</tr>
+		<tr>
+			<td>1002</td><td>이몽룡2</td><td>010-1111-2222</td><td>서울</td>
+		</tr>
+		<tr>
+			<td>1003</td><td>이몽룡3</td><td>010-1111-2223</td><td>서울</td>
+		</tr>
+		<tr>
+			<td>1004</td><td>이몽룡4</td><td>010-1111-2224</td><td>서울</td>
+		</tr>
+		<tr>
+			<td>1005</td><td>이몽룡5</td><td>010-1111-2225</td><td>서울</td>
+		</tr>
+	</table>
+</body>
+</html>

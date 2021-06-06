@@ -1,0 +1,48 @@
+package com.multi.contactsapp;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.multi.contactsapp.dao.ContactRepository;
+import com.multi.contactsapp.domain.Contact;
+
+@RestController
+@RequestMapping(value="/contacts3")
+public class HalController {
+	@Autowired
+	private ContactRepository contactRepository;
+	
+	@GetMapping("{no}")
+	public EntityModel<Contact> getContactByNo(@PathVariable("no") long no) {
+		Contact contact = contactRepository.findById(no).get();
+		
+		Link selfLink = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(HalController.class)
+				.getContactByNo(no)).withSelfRel();
+		EntityModel<Contact> result = new EntityModel<Contact>(contact, selfLink);
+		return result;
+	}
+	
+	@GetMapping() 
+	public CollectionModel<Contact> getContactsAll() {
+		List<Contact> contacts = contactRepository.findAll();
+	
+	    for (final Contact contact : contacts) {
+	        Link selfLink = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(HalController.class)
+	        		.getContactByNo(contact.getNo())).withSelfRel();
+	        contact.add(selfLink);
+	    }
+	    Link link = WebMvcLinkBuilder.linkTo(HalController.class).withSelfRel();
+	    CollectionModel<Contact> result = new CollectionModel<>(contacts, link);
+	    return result;
+	}
+}
